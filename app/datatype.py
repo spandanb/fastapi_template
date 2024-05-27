@@ -3,7 +3,7 @@ Datatypes
 """
 from pydantic import BaseModel, Field
 from datetime import datetime
-from typing import List
+from typing import List, Optional
 
 
 class Item(BaseModel):
@@ -20,4 +20,4 @@ class Order(BaseModel):
     items: List[OrderItem]
     order_id: int = 0
     created_at: float = Field(default_factory=lambda: datetime.now().timestamp())
-    status: str = None
+    status: Optional[str] = None

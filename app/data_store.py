@@ -1,6 +1,6 @@
 from typing import List
 
-from .datatype import Order
+from .datatype import DBResponse, Order
 
 
 class MemoryStore:
@@ -26,7 +26,7 @@ class MemoryStore:
             self.users[user_id] = {}
         return self.users[user_id]
 
-    def new_order(self, user_id: int, order: Order) -> int:
+    def new_order(self, user_id: int, order: Order) -> DBResponse[int]:
         """
         Create a new order and return order_id
         """
@@ -34,7 +34,7 @@ class MemoryStore:
         user_orders = self.get_user(user_id)
         user_orders[order_id] = order
         print("user_orders_map", self.users)
-        return order_id
+        return DBResponse(data=order_id)
 
-    def get_orders(self, user_id: int) -> List[Order]:
-        return list(self.get_user(user_id).values())
+    def get_orders(self, user_id: int) -> DBResponse[List[Order]]:
+        return DBResponse(data=list(self.get_user(user_id).values()))

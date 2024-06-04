@@ -1,8 +1,9 @@
 """
-Emulates a client to app/main.py.
+A client to app/main.py.
 """
 import requests
 from app.datatype import Order, OrderItem
+
 
 base_url = "http://127.0.0.1:8000"
 

@@ -18,15 +18,22 @@ pip install -r requirements.txt
 
 ## Apps
 
-This repo contains a simple app: `app/hello_fastapi.py`
+This repo contains a simple app: `app/main.py`
 
 This contains endpoints:
-- GET http://127.0.0.1:8000
-- GET http://127.0.0.1:8000/items/{item_id}
-- PUT http://127.0.0.1:8000/items/{item_id}
+- root of API:
+```
+GET http://127.0.0.1:8000
+```
+- create a new order:
+```
+POST http://127.0.0.1:8000/user/{user_id}/order
+```
 
-
-The repo also contains a more complete app: `app/main.py`
+- get all users orders:
+```
+GET http://127.0.0.1:8000/user/{user_id}/orders
+```
 
 ## Run App
 

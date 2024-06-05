@@ -12,4 +12,4 @@ run:
 
 .PHONY: tests
 tests:
-	python -m pytest app/test_main.py
+	python -m pytest --disable-warnings -s app/test_main.py
